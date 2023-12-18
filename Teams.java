@@ -2,47 +2,36 @@ import javax.swing.*;
 
 
 public class Teams {
-    String name, coach;
-    Icon logo;
-    int matchPlayed, wins, draws, loses;
+    public String name, coach;
+    public int matchPlayed, matchWin, matchDraw, matchLoss;
+    public int goalsFavor, goalsAgainst, goalDifference, totalPoints;
+    public ImageIcon logo;
 
-    Teams(String name, String coach, Icon logo){
-        this.name = name;
-        this.coach = coach;
-        this.logo = logo;
+
+    Teams(String tName, String cName, ImageIcon tLogo,
+            int mWin, int mDraw, int mLoss,
+                int gFavor, int gAgainst){
+
+        //Team Description
+        name = tName;
+        coach = cName;
+        logo = tLogo;
+
+        //Team Stats
+        matchPlayed = mWin + mLoss + mDraw;
+        matchWin = mWin;
+        matchDraw = mDraw;
+        matchLoss = mLoss;
+        goalsFavor = gFavor;
+        goalsAgainst = gAgainst;
+        goalDifference = gFavor - gAgainst;
+        totalPoints = mWin * 3 + mDraw;
+
+
+
     }
 
-    public Icon getLogo() {
-        return logo;
-    }
 
-    public int getDraws() {
-        return draws;
-    }
-
-    public int getLoses() {
-        return loses;
-    }
-
-    public int getMatchPlayed() {
-        return matchPlayed;
-    }
-
-    public int getWins() {
-        return wins;
-    }
-
-    public String getCoach() {
-        return coach;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setCoach(String coach) {
-        this.coach = coach;
-    }
 }
 
 
